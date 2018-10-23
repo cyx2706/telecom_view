@@ -1,0 +1,5 @@
+/* pages/common/OrderCard/OrderCard.wxss */
+
+.orderCard image {
+    border-radius: 50%;
+}

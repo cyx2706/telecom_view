@@ -1,0 +1,13 @@
+<!-- pages/common/NavPage/NavPage.wxml -->
+<view class="NavPage">
+    <i-page i-class="fix-i-page" current="{{ current }}" total="{{total}}" bind:change="_handleChange">
+        <view slot="prev">
+            <i-icon type="return"></i-icon>
+            上一页
+        </view>
+        <view slot="next">
+            下一页
+            <i-icon type="enter"></i-icon>
+        </view>
+    </i-page>
+</view>

@@ -1,0 +1,64 @@
+/* pages/common/IdCard/IdCard.wxss */
+
+.idCard {
+    color: white;
+    width: 100%;
+    /* border-radius: 4px; */
+    background: #2c3e50;
+    text-shadow: 0 -1px 1px black;
+    /* text-shadow: 0 0.03em 0.03em rgba(0, 0, 0, 0.8); */
+    box-shadow: 1px 1px 7px 1px rgba(0, 0, 0, 0.27);
+}
+
+.idCard_body {
+    padding: 1.5rem 1rem 0rem 1rem;
+}
+
+.idCard_footer {
+    padding: 0.5rem;
+}
+
+.idCard_title_text {
+    font-size: 1.4rem;
+    font-weight: 400;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.idCard_title {
+    /* width: 70%; */
+    text-align: center;
+}
+
+.userinfo-avatar {
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.divider {
+    width: 100%;
+    border-bottom: 8rpx dashed rgba(0, 0, 0, 0.27);
+    margin: 0.5rem 0;
+}
+
+.idCard_logo {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 168rpx;
+    overflow: hidden;
+    /* text-align: center; */
+}
+
+.userinfo-nickname {
+    display: inline-block;
+    color: white;
+    width: 60%;
+    font-size: 1.2rem;
+    box-shadow: 0px 2rpx white;
+}

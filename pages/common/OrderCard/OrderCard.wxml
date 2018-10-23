@@ -1,0 +1,18 @@
+<!-- TODO @params thumb => dataSource.thumb -->
+<!-- TODO @params maybe add a property to show myself logo for user Page -->
+<i-card title="{{dataSource.usr_name||dataSource.ord_name}}" class="orderCard" extra="{{dataSource.ord_status}}" thumb="{{thumb}}">
+    <view slot="content">
+        <slot></slot>
+    </view>
+    <view slot="footer">
+        <i-divider content="联系方式"></i-divider>
+        <i-icon type="coordinates_fill" />
+        {{dataSource.ord_addr}}
+        <text>\n</text>
+        <i-icon type="mobilephone_fill" />
+        {{dataSource.ord_tel}}
+        <i-button wx:if="{{showChangeBtn}}" class="btn" type="ghost" loading="{{loading}}" bind:click="_handleChangeStatus">
+            更改状态
+        </i-button>
+    </view>
+</i-card>

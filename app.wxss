@@ -1,0 +1,23 @@
+/**app.wxss**/
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100rpx 0;
+    box-sizing: border-box;
+}
+
+.scroll-h {
+    height: 100%;
+}
+
+.orderCard {
+    margin: 20rpx;
+}
+
+.section_homepage {
+    padding-bottom: 1.5rem;
+}

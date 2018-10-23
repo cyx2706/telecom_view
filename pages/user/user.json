@@ -1,0 +1,17 @@
+{
+    "navigationBarTitleText": "用户页面",
+    "usingComponents": {
+        "i-button": "../../dist/button/index",
+        "i-icon": "../../dist/icon/index",
+        "i-card": "../../dist/card/index",
+        "i-action-sheet": "../../dist/action-sheet/index",
+        "i-message": "../../dist/message/index",
+        "i-panel": "../../dist/panel/index",
+        "i-tab-bar": "../../dist/tab-bar/index",
+        "i-tab-bar-item": "../../dist/tab-bar-item/index",
+
+        "OrderCard": "../common/OrderCard/OrderCard",
+        "IdCard": "../common/IdCard/IdCard",
+        "NavPage": "../common/NavPage/NavPage"
+    }
+}

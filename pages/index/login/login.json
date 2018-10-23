@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "登录页面",
+    "usingComponents": {
+        "i-input": "../../../dist/input/index",
+        "i-panel": "../../../dist/panel/index",
+        "i-button": "../../../dist/button/index",
+        "i-message": "../../../dist/message/index"
+    }
+}

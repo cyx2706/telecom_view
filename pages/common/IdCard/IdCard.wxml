@@ -1,0 +1,16 @@
+<!-- pages/common/IdCard/IdCard.wxml -->
+<view class="idCard" style="background: linear-gradient(to left, {{colorStart}}, {{colorEnd}});">
+    <view class="idCard_body">
+        <view class="idCard_logo">
+            <i-icon wx:if="{{avatarUrl===''}}" type="warning_fill" size="58" />
+            <image bindtap="bindViewTap" class="userinfo-avatar" src="{{avatarUrl}}" mode="cover"></image>
+            <text class="userinfo-nickname">{{nickName}}</text>
+        </view>
+    </view>
+    <view class="divider"></view>
+    <view class="idCard_footer">
+        <view class="idCard_title">
+            <text class="idCard_title_text">[{{role}}]</text>
+        </view>
+    </view>
+</view>

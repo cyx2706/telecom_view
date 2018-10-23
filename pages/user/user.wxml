@@ -1,0 +1,31 @@
+<i-tab-bar current="{{ current }}" color="#1c2438" bindchange="handleChange" fixed>
+    <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="查看订单"></i-tab-bar-item>
+    <i-tab-bar-item key="mine" icon="mine" current-icon="mine_fill" dot title="账号"></i-tab-bar-item>
+</i-tab-bar>
+<swiper current-item-id="{{current}}" style=" height:{{clientHeight?(clientHeight-50)+'px':'auto'}}" duration="300" bind:change="swiperTab">
+    <!-- home 页面布局 -->
+    <swiper-item item-id="homepage">
+        <scroll-view scroll-y="{{true}}" class="scroll-h">
+            <view class="section_homepage">
+                <!-- 显示订单卡片列表 -->
+                <i-panel title="我的预约">
+                    <block wx:for-items="{{userOrderList}}" wx:key="{{item.ord_id}}">
+                        <view class="orderCard">
+                            <OrderCard dataSource="{{item}}" thumb="{{userInfo.avatarUrl}}" showChangeBtn="{{false}}"></OrderCard>
+                        </view>
+                    </block>
+                </i-panel>
+                <NavPage current="{{currentPageIndex}}" total="{{totalPageIndex}}" handleChange=""></NavPage>
+            </view>
+        </scroll-view>
+    </swiper-item>
+    <swiper-item item-id="mine">
+        <scroll-view scroll-y="{{true}}" class="scroll-h">
+            <view class="section_mine">
+                <IdCard role="用户" nickName="{{userInfo.nickName}}" avatarUrl="{{userInfo.avatarUrl}}" colorStart='#c31432' colorEnd='#240b36'></IdCard>
+                <i-button bind:click="handleScan">点击扫码预约</i-button>
+                <i-button bind:click="handleForm">手动填写预约</i-button>
+            </view>
+        </scroll-view>
+    </swiper-item>
+</swiper>

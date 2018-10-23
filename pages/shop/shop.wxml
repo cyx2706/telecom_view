@@ -1,0 +1,29 @@
+<!-- pages/shop/shop.wxml -->
+<i-tab-bar current="{{ current }}" bindchange="handleChange" color="#c0392b" fixed>
+    <i-tab-bar-item key="homepage" icon="createtask" current-icon="createtask_fill" title="查看订单"></i-tab-bar-item>
+    <!-- <i-tab-bar-item key="remind" icon="remind" current-icon="remind_fill" count="3" title="通知"></i-tab-bar-item> -->
+    <i-tab-bar-item key="mine" icon="mine" current-icon="mine_fill" dot title="账号"></i-tab-bar-item>
+</i-tab-bar>
+<swiper current-item-id="{{current}}" style=" height:{{clientHeight?(clientHeight-50)+'px':'auto'}}" duration="300" bind:change="swiperTab">
+    <!-- home 页面布局 -->
+    <swiper-item item-id="homepage">
+        <scroll-view scroll-y="{{true}}" class="scroll-h">
+            <view class="section_homepage">
+                <!-- 显示订单卡片列表 -->
+                <block wx:if="{{orderList.length}}" wx:for-items="{{orderList}}" wx:key="{{item.ord_id}}">
+                    <view class="orderCard">
+                        <OrderCard dataSource="{{item}}" showChangeBtn="{{false}}"></OrderCard>
+                    </view>
+                </block>
+                <NavPage current="{{currentPageIndex}}" total="{{totalPageIndex}}" handleChange=""></NavPage>
+            </view>
+        </scroll-view>
+    </swiper-item>
+    <swiper-item item-id="mine">
+        <scroll-view scroll-y="{{true}}" class="scroll-h">
+            <view class="section_mine">
+                <IdCard role="商店" nickName="{{userInfo.nickName}}" avatarUrl="{{userInfo.avatarUrl}}" colorStart='#c31432' colorEnd='#240b36'></IdCard>
+            </view>
+        </scroll-view>
+    </swiper-item>
+</swiper>

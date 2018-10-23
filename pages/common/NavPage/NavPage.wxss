@@ -1,0 +1,6 @@
+/* pages/common/NavPage/NavPage.wxss */
+
+.fix-i-page {
+    /* margin: 2rem auto; */
+    overflow: visible !important;
+}

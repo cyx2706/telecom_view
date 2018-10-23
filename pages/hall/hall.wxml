@@ -1,0 +1,60 @@
+<!-- pages/hall/hall.wxml -->
+<view class="section">
+    <i-tab-bar current="{{ current }}" fixed bindchange="handleChange">
+        <i-tab-bar-item key="homepage" icon="createtask" current-icon="createtask_fill" title="订单"></i-tab-bar-item>
+        <i-tab-bar-item key="shop" icon="integral" current-icon="integral_fill" title="商店"></i-tab-bar-item>
+        <!-- <i-tab-bar-item key="remind" icon="remind" current-icon="remind_fill" count="3" title="通知"></i-tab-bar-item> -->
+        <i-tab-bar-item key="mine" icon="mine" current-icon="mine_fill" dot title="我"></i-tab-bar-item>
+    </i-tab-bar>
+    <swiper current-item-id="{{current}}" style=" height:{{clientHeight?(clientHeight-50)+'px':'auto'}}" duration="300" bind:change="swiperTab">
+        <!-- home 页面布局 -->
+        <swiper-item item-id="homepage">
+            <scroll-view scroll-y="{{true}}" class="scroll-h">
+                <view class="section_homepage">
+                    <!-- 显示订单卡片列表 -->
+                    <view class="orderCard" wx:for="{{orderList}}" wx:key="{{item.ord_id}}">
+                        <OrderCard dataSource="{{item}}" data-id="{{item.ord_id}}" bind:handleChangeStatus="handleOpenSheet"></OrderCard>
+                    </view>
+                    <NavPage current="{{currentPageIndex}}" total="{{totalPageIndex}}" handleChange=""></NavPage>
+                </view>
+            </scroll-view>
+        </swiper-item>
+        <swiper-item item-id="shop">
+            <scroll-view scroll-y="{{true}}" class="scroll-h">
+                <view class="section_shop">
+                    <!-- 显示商店列表 -->
+                    <view class="" wx:for="{{shopList}}" wx:key="{{item.shop_id}}">
+                        <i-card title="{{item.shop_name}}" extra="{{item.shop_status==1?'正常营业':'未营业'}}" full>
+                            <view slot="content">账号:{{item.shop_account}}</view>
+                            <!--<view slot="content">密码:{{item.shop_password}}</view>-->
+                            <view slot="footer">
+                                <i-icon type="mobilephone_fill" />
+                                {{item.shop_tel}}
+                            </view>
+                        </i-card>
+                    </view>
+                    <i-button bind:click="createShop">创建商店</i-button>
+                </view>
+            </scroll-view>
+        </swiper-item>
+        <swiper-item item-id="mine">
+            <scroll-view scroll-y="{{true}}" class="scroll-h">
+                <view class="section_mine">
+                    <IdCard role="营业厅" nickName="{{userInfo.nickName}}" avatarUrl="{{userInfo.avatarUrl}}" colorStart='#c31432' colorEnd='#240b36'></IdCard>
+                </view>
+            </scroll-view>
+        </swiper-item>
+    </swiper>
+    <i-action-sheet visible="{{ SheetVisible }}" actions="{{ SheetActions }}" show-cancel bind:cancel="handleCancelSheet" bind:click="handleOrder" mask-closable="{{ false }}">
+        <view slot="header" style="padding: 16px">
+            <view style="color: #444;font-size: 16px">更改状态?</view>
+            <text>请选择一种状态</text>
+        </view>
+    </i-action-sheet>
+    <i-message id="message" />
+    <i-modal title="已创建商店" visible="{{ ModalVisible }}" bind:ok="handleCloseModal" bind:cancel="handleCloseModal">
+        <view>请妥善保存商店的账号和密码</view>
+        <view>账号:{{created_shop_account}}</view>
+        <view>密码:{{created_shop_password}}</view>
+    </i-modal>
+</view>

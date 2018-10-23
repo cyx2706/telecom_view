@@ -1,0 +1,6 @@
+/* pages/shop/shop.wxss */
+
+.orderCard {
+    /* margin-top: 2rem; */
+    margin-bottom: 2rem;
+}

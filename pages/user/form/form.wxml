@@ -1,0 +1,24 @@
+<!-- pages/user/form/form.wxml -->
+<view>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+        <i-panel title="基础信息">
+            <view class="input-group">
+                <input name="ord_name" type="text" placeholder="预约人" />
+                <input name="ord_tel" type="number" placeholder="联系电话" />
+                <input name="ord_address" type="textarea" placeholder="预约地址" />
+            </view>
+            <i-panel title="可预约商店列表">
+                <radio-group class="radio-group" bindchange="radioChange">
+                    <view class="shop-radio" wx:for="{{shopList}}">
+                        <label class="radio">
+                            <radio value="{{item.id}}" checked="{{item.checked}}" />
+                            {{item.name}}
+                        </label>
+                    </view>
+                </radio-group>
+            </i-panel>
+            <button formType="submit">提交数据</button>
+        </i-panel>
+    </form>
+</view>
+<i-message id="message" />

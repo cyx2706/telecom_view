@@ -1,0 +1,18 @@
+<!-- pages/index/login/login.wxml -->
+<view class="login">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+        <i-panel title=" 身份: {{ currentRole}}">
+            <view class="input-group">
+                <!-- <input name="ord_name" type="text" placeholder="预约人" />
+                <input name="ord_tel" type="number" placeholder="联系电话" />
+                <input name="ord_address" type="textarea" placeholder="预约地址" /> -->
+                <input name="account" type="text" placeholder="请输入账号" />
+                <input name="password" type="password" placeholder="请输入密码" />
+            </view>
+            <view class="login-btn">
+                <button type="error" formType="submit">登录</button>
+            </view>
+        </i-panel>
+        <i-message id="message" />
+    </form>
+</view>

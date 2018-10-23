@@ -1,0 +1,4 @@
+<!-- pages/adm/stat/stat.wxml -->
+<view class="section_dynamic">
+    <canvas canvas-id="pieCanvas" />
+</view>

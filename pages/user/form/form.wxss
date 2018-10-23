@@ -1,0 +1,12 @@
+/* pages/user/form/form.wxss */
+
+.input-group input {
+    border-radius: 5px;
+    border: 2rpx solid darkgray;
+    margin: 1rem;
+    padding: .5rem;
+}
+
+.radio-group .shop-radio {
+    margin: 1rem;
+}

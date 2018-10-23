@@ -1,0 +1,14 @@
+/* pages/index/login/login.wxss */
+
+.login {
+    margin: 2rem;
+    /* border: 4rpx solid gray; */
+    box-shadow: 0 25px 50px 0 rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgba(0, 0, 0, 0.2);
+}
+
+.input-group input {
+    border-radius: 5px;
+    border: 2rpx solid darkgray;
+    margin: 1rem;
+    padding: .5rem;
+}

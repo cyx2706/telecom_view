@@ -1,0 +1,20 @@
+<!-- index.wxml -->
+<view class="container">
+  <view class="userinfo">
+    <i-button type="primary" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+      手动登录
+    </i-button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto" bindtap="bindPageBtnTap">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  <view class="indexGroup">
+    <view wx:for="{{pageBtns}}" bindtap="bindPageBtnTap" class='page-index'>
+      <i-button class='' data-url='{{item.url}}'>{{item.text}}</i-button>
+    </view>
+  </view>
+</view>

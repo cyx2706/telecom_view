@@ -1,0 +1,29 @@
+<!-- pages/adm/adm.wxml -->
+<view class="section">
+    <i-tab-bar current="{{ current }}" fixed bindchange="handleChange">
+        <i-tab-bar-item key="homepage" icon="createtask" current-icon="createtask_fill" title="订单"></i-tab-bar-item>
+        <i-tab-bar-item key="dynamic" icon="dynamic" current-icon="dynamic_fill" title="统计"></i-tab-bar-item>
+    </i-tab-bar>
+    <swiper current-item-id="{{current}}" style=" height:{{clientHeight?(clientHeight-50)+'px':'auto'}}" duration="300" bind:change="swiperTab">
+        <!-- home 页面布局 -->
+        <swiper-item item-id="homepage">
+            <scroll-view scroll-y="{{true}}" class="scroll-h">
+                <view class="section_homepage">
+                    <!-- 显示订单卡片列表 -->
+                    <view class="orderCard" wx:for="{{orderList}}" wx:key="{{item.ord_id}}">
+                        <OrderCard dataSource="{{item}}" showChangeBtn="{{false}}"></OrderCard>
+                    </view>
+                    <NavPage current="{{currentPageIndex}}" total="{{totalPageIndex}}" handleChange=""></NavPage>
+                </view>
+            </scroll-view>
+        </swiper-item>
+        <swiper-item item-id="dynamic">
+            <scroll-view scroll-y="{{true}}" class="scroll-h">
+                <view class="section_dynamic">
+                    <!-- 显示统计图 -->
+                    <button bindtap="handleToStat">生成统计信息</button>
+                </view>
+            </scroll-view>
+        </swiper-item>
+    </swiper>
+</view>

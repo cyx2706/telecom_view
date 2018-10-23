@@ -1,0 +1,8 @@
+/* pages/adm/stat/stat.wxss */
+
+.section_dynamic canvas {
+    /* width: 750rpx;
+    height: 750rpx; */
+    width: 100%;
+    height: 1000rpx;
+}

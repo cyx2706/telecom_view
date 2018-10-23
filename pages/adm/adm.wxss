@@ -1,0 +1,9 @@
+/* pages/adm/adm.wxss */
+
+.section_dynamic button {
+    width: 700rpx;
+    height: 700rpx;
+    border-radius: 100%;
+    border: 8rpx dashed #2d8cf0;
+    line-height: 700rpx;
+}
